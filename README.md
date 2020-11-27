@@ -2,10 +2,7 @@
 
 Готовый проект: [Demo](https://serrjik.github.io/intensive-keyboard-gym/)
 
-Проект создан во время бесплатного интенсива школы [Constcode](https://constcode.ru/){:target="_blank" rel="noopener"}
-
-<a href="https://constcode.ru/" target="_blank" rel="noopener">New Tab</a>
-[go](http://stackoverflow.com){:target="_blank" rel="noopener"}
+Проект создан во время бесплатного интенсива школы [Constcode](https://constcode.ru/)
 
 ### Примененные технологии в проекте:
 
