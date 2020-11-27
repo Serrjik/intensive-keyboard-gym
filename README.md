@@ -5,6 +5,7 @@
 Проект создан во время бесплатного интенсива школы [Constcode](https://constcode.ru/){:target="_blank" rel="noopener"}
 
 <a href="https://constcode.ru/" target="_blank" rel="noopener">New Tab</a>
+[go](http://stackoverflow.com){:target="_blank" rel="noopener"}
 
 ### Примененные технологии в проекте:
 
