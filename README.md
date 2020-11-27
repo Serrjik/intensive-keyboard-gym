@@ -4,7 +4,7 @@
 
 Проект создан во время бесплатного интенсива школы [Constcode](https://constcode.ru/){:target="_blank" rel="noopener"}
 
-<a href="example.com" target="_blank">New Tab</a>
+<a href="https://constcode.ru/" target="_blank" rel="noopener">New Tab</a>
 
 ### Примененные технологии в проекте:
 
