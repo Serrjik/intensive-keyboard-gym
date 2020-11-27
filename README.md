@@ -2,7 +2,7 @@
 
 Готовый проект: [Demo](https://serrjik.github.io/intensive-keyboard-gym/)
 
-Проект создан во время бесплатного интенсива школы [Constcode](https://constcode.ru/)
+Проект создан во время бесплатного интенсива школы [Constcode](https://constcode.ru/){:target="_blank"}
 
 ### Примененные технологии в проекте:
 
