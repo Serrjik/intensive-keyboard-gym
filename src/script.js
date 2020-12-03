@@ -21,12 +21,12 @@ const realWordsPerMinuteIndicator =
 // Индикатор количества ошибок.
 const errorPercent = document.querySelector('#errorPercent')
 
+// Функция возвращает объект с текстами для набора.
 getTexts = async () => {
 	const response = await fetch('./texts/texts.json')
 
 	if (response.ok) {
 		return await response.json()
-
 	}
 
 	else {
@@ -37,19 +37,38 @@ getTexts = async () => {
 main = async () => {
 	// Объект из файла с текстами.
 	const data = await getTexts()
-	console.log('data: ', data)
 
 	// Ключи объекта с текстами.
 	const keys = Object.keys(data)
 
 	// Случайный ключ объекта с текстами (возьмем текст с этим ключом).
 	const key = getRandomFrom(keys)
-	console.log('key: ', key);
+
+	// Выбранный массив со строками текста для набора.
+	const textArray = data[key]
+	// Длина массива со строками текста для набора.
+	const textArrayLength = textArray.length
 
 	// Текст для тренировки.
-	const text = data[key].reduce((acc, item) => acc + item + '\n')
-	// console.log('text: ', text);
-	// console.log('text[1]: ', text[1].reduce((acc, item) => acc + item))
+	let text = ''
+
+	// Пройти по выбранному массиву со строками текста для набора.
+	for (let i = 0; i < textArrayLength; i++) {
+		// Если это НЕ последняя строка в массиве:
+		if (i < textArrayLength - 1) {
+			/*
+			Добавить выбранную строку и перевод строки
+				к тексту для тренировки.
+			*/
+			text += textArray[i] + '\r\n'
+		}
+
+		// Если это последняя строка в массиве:
+		else {
+			// Добавить выбранную строку к тексту для тренировки.
+			text += textArray[i]
+		}
+	}
 
 	// Партия тренировки.
 	const party = createParty(text)
@@ -365,6 +384,7 @@ main = async () => {
 		const done = document.createElement('span')
 		done.classList.add('done')
 		done.textContent = string.slice(0, party.currentPressedIndex)
+			// .replace(/\s/g, '␣')
 		/*
 			Добавить в первую строку часть текста, который уже успели напечатать
 			и оставшуюся часть строки (которую нужно напечатать).
