@@ -289,7 +289,6 @@ main = async () => {
 			party.strings.push(string.join(' '))
 		}
 
-		console.log('party.strings: ', party.strings);
 		return party
 	}
 
@@ -403,8 +402,12 @@ main = async () => {
 		// Часть текста, который уже успели напечатать.
 		const done = document.createElement('span')
 		done.classList.add('done')
-		done.textContent = string.slice(0, party.currentPressedIndex)
-			// .replace(/\s/g, '␣')
+		/*
+			Заменить в части текста, который уже успели напечатать,
+			пробелы на отображаемые пробелы.
+		*/
+		done.textContent =
+			string.slice(0, party.currentPressedIndex).replace(/\s/g, '␣')
 		/*
 			Добавить в первую строку часть текста, который уже успели напечатать
 			и оставшуюся часть строки (которую нужно напечатать).
