@@ -354,6 +354,11 @@ main = async () => {
 			else if (!party.errors.includes(mustLetter)) {
 				// Объявить символ, который попытались напечатать, ошибочным.
 				party.errors.push(mustLetter)
+				// Если в массиве символов, в которых ошиблись, более 3 символов:
+				if (party.errors.length > 3) {
+					// Удаляем символ, в котором ошиблись ранее других.
+					party.errors.shift()
+				}
 				// Увеличить счётчик количества ошибок в текущем тексте.
 				party.errorCounter++
 			}
