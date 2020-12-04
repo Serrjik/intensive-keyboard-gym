@@ -78,6 +78,7 @@ body {
 	outline: none;
 	font-family: "PT Mono", monospace;
 	font-size: 18px;
+	word-spacing: 3px;
 	transition: all 0.1s ease-in;
 }
 .input.blur {
@@ -88,7 +89,7 @@ body {
 }
 .text {
 	font-family: "PT Mono", monospace;
-	font-size: 19px;
+	font-size: 18px;
 	margin-bottom: 35px;
 }
 .text .line {
