@@ -21,6 +21,11 @@ const realWordsPerMinuteIndicator =
 // Индикатор количества ошибок.
 const errorPercent = document.querySelector('#errorPercent')
 
+// Кнопка показа/скрытия клавиатуры.
+const keyboardShowButton = document.querySelector('#keyboardShowButton')
+// Блок с экранной клавиатурой.
+const keyboard = document.querySelector('.keyboard')
+
 // Функция возвращает объект с текстами для набора.
 getTexts = async () => {
 	const response = await fetch('./texts/texts.json')
@@ -101,6 +106,12 @@ main = async () => {
 
 		// Повесить обработчик отжатия клавиши на поле для ввода символов.
 		input.addEventListener('keyup', keyupHandler)
+
+		// Если сохранённое состояние экранной клавиатуры "скрытая":
+		if (localStorage.getItem('keyboardGym-showKeyboard') === 'false') {
+			// Скрыть экранную клавиатуру.
+			keyboard.classList.add('hidden')
+		}
 
 		// Обновить визуальную часть приложения.
 		viewUpdate()
@@ -548,10 +559,29 @@ main()
 
 // Функция возвращает случайное число от минимального до максимального.
 function getRandom (min, max) {
-    return min + Math.floor(Math.random() * (max - min + 1))
+	return min + Math.floor(Math.random() * (max - min + 1))
 }
 
 // Функция принимает массив и возвращает случайный элемент этого массива.
 function getRandomFrom (array) {
 	return array[getRandom(0, array.length - 1)]
 }
+
+// Повесить обработчик клика на кнопку показа/скрытия клавиатуры.
+keyboardShowButton.addEventListener('click', () => {
+	// Если экранная клавиатура скрыта:
+	if (keyboard.classList.contains('hidden')) {
+		// Показать экранную клавиатуру.
+		keyboard.classList.remove('hidden')
+		// Запомнить состояние отображения экранной клавиатуры.
+		localStorage.setItem('keyboardGym-showKeyboard', 'true')
+	}
+
+	// Если экранная клавиатура НЕ скрыта:
+	else {
+		// Скрыть экранную клавиатуру.
+		keyboard.classList.add('hidden')
+		// Запомнить состояние отображения экранной клавиатуры.
+		localStorage.setItem('keyboardGym-showKeyboard', 'false')
+	}
+})

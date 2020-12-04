@@ -88,7 +88,7 @@ body {
 }
 .text {
 	font-family: "PT Mono", monospace;
-	font-size: 18px;
+	font-size: 19px;
 	margin-bottom: 35px;
 }
 .text .line {
@@ -99,7 +99,7 @@ body {
 	color: #d9d9d9;
 }
 .text .hint {
-	background-color: #fff000;
+	background-color: #ffa;
 }
 .text.error {
 	color: #ff0000;
@@ -727,4 +727,10 @@ body {
 }
 .pressed {
 	background-color: #c7d0d4 !important;
+}
+.button {
+	width: 20px;
+	margin-left: auto;
+	color: lightslategrey;
+	cursor: pointer;
 }

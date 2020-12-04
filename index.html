@@ -60,7 +60,8 @@
 
 		<div class="devider"></div>
 
-		<div class="container">
+		<div class="container clearfix::before clearfix::after">
+
 			<!-- Input field -->
 			<form action="">
 				<input
@@ -68,7 +69,7 @@
 					type="text"
 					class="input unselectable"
 					placeholder="Поле для ввода текста"
-					value="На переднем плане, прямо перед"
+					value=""
 					autocomplete="off"
 				/>
 			</form>
@@ -79,12 +80,16 @@
 			<div class="text" id="textExample">
 				<div>
 					<div class="line line-1">
-						<span class="done">На переднем плане, прямо перед</span>
-						<span class="hint">н</span>ами, расположен был дворик, где стоял
+						<span class="done"></span>
+						<span class="hint"></span>
 					</div>
 				</div>
 			</div>
 			<!-- // Text  -->
+
+			<div class="button mb-5 mr-10" id="keyboardShowButton">
+				<i class="far fa-keyboard"></i>
+			</div>
 
 			<!-- Keyboard -->
 			<div class="keyboard">
