@@ -519,7 +519,7 @@ main = async () => {
 		textExample.append(div)
 
 		// Вставить в поле для ввода символов часть строки, которую уже напечатали.
-		input.value = string.slice(0, party.currentPressedIndex)
+		input.value = string.slice(0, party.currentPressedIndex).replace(/\s/g, '␣')
 
 		// Если ещё не начали набор строки и партия тренировки уже стартовала:
 		if (!party.statisticFlag && party.started) {
