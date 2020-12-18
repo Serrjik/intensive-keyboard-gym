@@ -750,6 +750,7 @@ body.dark--theme {
 	cursor: pointer;
 }
 .theme-switcher {
+	display: inline-block;
 	color: #839095;
 	cursor: pointer;
 }
