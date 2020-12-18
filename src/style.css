@@ -10,8 +10,12 @@ body {
 	padding: 0;
 	font-family: sans-serif;
 }
+body.dark--theme {
+	background-color: #2a292b;
+	color: white;
+}
 .container {
-	max-width: 800px;
+	max-width: 880px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -77,7 +81,7 @@ body {
 	border-bottom: 1px dotted #000;
 	outline: none;
 	font-family: "PT Mono", monospace;
-	font-size: 18px;
+	font-size: 20px;
 	word-spacing: 3px;
 	transition: all 0.1s ease-in;
 }
@@ -87,9 +91,13 @@ body {
 .input.error {
 	background-color: #fff000;
 }
+.dark--theme .input {
+	background: #1b2836;
+	color: white;
+}
 .text {
 	font-family: "PT Mono", monospace;
-	font-size: 18px;
+	font-size: 20px;
 	margin-bottom: 35px;
 }
 .text .line {
@@ -101,6 +109,9 @@ body {
 }
 .text .hint {
 	background-color: hsl(60 100% 83% / 0.5);
+}
+.dark--theme .hint {
+	background-color: hsl(194 7% 51% / 0.3);
 }
 .text.error {
 	color: #ff0000;
@@ -734,4 +745,11 @@ body {
 	margin-left: auto;
 	color: lightslategrey;
 	cursor: pointer;
+}
+.theme-switcher {
+	color: #839095;
+	cursor: pointer;
+}
+.dark--theme .theme-switcher {
+	color: white;
 }

@@ -3,6 +3,7 @@ const AVERAGE_LENGTH_OF_AN_ENGLISH_WORD = 5
 // Средняя длина русскоязычного слова.
 const AVERAGE_LENGTH_OF_AN_RUSSIAN_WORD = 7.2
 
+const body = document.querySelector('body')
 // Поле для ввода символов.
 const input = document.querySelector('input')
 // Клавиши с символами на экранной клавиатуре.
@@ -25,6 +26,9 @@ const errorPercent = document.querySelector('#errorPercent')
 const keyboardShowButton = document.querySelector('#keyboardShowButton')
 // Блок с экранной клавиатурой.
 const keyboard = document.querySelector('.keyboard')
+
+// Кнопка переключения светлой/тёмной тем.
+const themeSwitcher = document.querySelector('.theme-switcher')
 
 // Функция возвращает объект с текстами для набора.
 getTexts = async () => {
@@ -111,6 +115,13 @@ main = async () => {
 		if (localStorage.getItem('keyboardGym-showKeyboard') === 'false') {
 			// Скрыть экранную клавиатуру.
 			keyboard.classList.add('hidden')
+		}
+
+		// Если сохранённое состояние темы "Тёмная" - true:
+		if (localStorage.getItem('keyboardGym-darkTheme') === 'true') {
+			// Установить тёмную тему.
+			body.classList.add('dark--theme')
+			themeSwitcher.textContent = 'Light theme'
 		}
 
 		// Обновить визуальную часть приложения.
@@ -583,5 +594,24 @@ keyboardShowButton.addEventListener('click', () => {
 		keyboard.classList.add('hidden')
 		// Запомнить состояние отображения экранной клавиатуры.
 		localStorage.setItem('keyboardGym-showKeyboard', 'false')
+	}
+})
+
+// Повесить обработчик клика на кнопку переключения светлой/тёмной тем.
+themeSwitcher.addEventListener('click', () => {
+	// Если текущая тема тёмная:
+	if (body.classList.contains('dark--theme')) {
+		themeSwitcher.textContent = 'Dark theme'
+		body.classList.remove('dark--theme')
+		// Запомнить выбор тёмной темы (false).
+		localStorage.setItem('keyboardGym-darkTheme', 'false')
+	}
+	
+	// Если текущая тема светлая:
+	else {
+		themeSwitcher.textContent = 'Light theme'
+		body.classList.add('dark--theme')
+		// Запомнить выбор тёмной темы (true).
+		localStorage.setItem('keyboardGym-darkTheme', 'true')
 	}
 })
